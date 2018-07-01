@@ -55,9 +55,9 @@
 					<family>windows</family>
 				</os>
 			</activation>
-			<propeties>
+			<properties>
 				<JdkExe>C:\Program Files\Java\jdk1.8.0_171\bin\javac</JdkExe>
-			</propeties>			
+			</properties>			
 		</profile>
 		<profile>
 			<id>windows</id> <!-- this profile will be executed only on windows machines or mvn clean install -P profileName -->
@@ -66,9 +66,9 @@
 					<family>unix</family>
 				</os>
 			</activation>
-			<propeties>
+			<properties>
 				<JdkExe>/usr/java/jdk1.8.0_131/bin/javac</JdkExe>
-			</propeties>
+			</properties>
 		</profile>
 	</profiles>
 </project>
