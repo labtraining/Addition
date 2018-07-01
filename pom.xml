@@ -9,7 +9,6 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<JdkExe>C:\Program Files\Java\jdk1.8.0_171\bin\javac</JdkExe>
 	</properties>
 
 	<build>
@@ -48,4 +47,28 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<profiles>
+		<profile>
+			<id>windows</id> <!-- this profile will be executed only on windows machines or mvn clean install -P profileName -->
+			<activation>
+				<os>
+					<family>windows</family>
+				</os>
+			</activation>
+			<propeties>
+				<JdkExe>C:\Program Files\Java\jdk1.8.0_171\bin\javac</JdkExe>
+			</propeties>			
+		</profile>
+		<profile>
+			<id>windows</id> <!-- this profile will be executed only on windows machines or mvn clean install -P profileName -->
+			<activation>
+				<os>
+					<family>unix</family>
+				</os>
+			</activation>
+			<propeties>
+				<JdkExe>/usr/java/jdk1.8.0_131/bin/javac</JdkExe>
+			</propeties>
+		</profile>
+	</profiles>
 </project>
