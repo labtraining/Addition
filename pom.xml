@@ -9,6 +9,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<JdkExe>C:\Program Files\Java\jdk1.8.0_171\bin\javac</JdkExe>
 	</properties>
 
 	<build>
@@ -23,6 +24,17 @@
 							<!-- java -jar target/Addition-1.0.0-SNAPSHOT.jar -->
 						</manifest>
 					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<verbose>true</verbose>
+					<fork>true</fork>
+					<executable>${JdkExe}</executable>
+					<compilerVersion>1.8</compilerVersion>
 				</configuration>
 			</plugin>
 		</plugins>
