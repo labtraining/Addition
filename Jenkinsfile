@@ -12,5 +12,39 @@ pipeline {
         echo 'build'
       }
     }
+    stage('sonar') {
+      steps {
+        echo 'sonar analysis'
+      }
+    }
+    stage('deploy-package-nexus') {
+      parallel {
+        stage('deploy-nexus') {
+          steps {
+            echo 'deploy-package-nexus'
+          }
+        }
+        stage('deploy-server') {
+          steps {
+            echo 'deploy the package to application server/environemnt'
+          }
+        }
+      }
+    }
+    stage('test') {
+      steps {
+        echo 'selenium testting'
+      }
+    }
+    stage('deploy-system') {
+      steps {
+        echo 'deploy-to-higher env system'
+      }
+    }
+    stage('test-on-system') {
+      steps {
+        echo 'testing on system env'
+      }
+    }
   }
 }
